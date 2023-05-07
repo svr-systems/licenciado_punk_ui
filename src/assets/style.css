@@ -1,0 +1,29 @@
+.toolbar {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.v-main {
+  background-color: #222;
+}
+
+.swal2-html-container,
+.swal2-styled {
+  font-family: "Roboto" !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #444; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
+}

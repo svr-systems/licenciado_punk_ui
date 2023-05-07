@@ -1,55 +1,58 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <SideBar :drawer.sync="drawer" />
+
+    <v-app-bar app color="black" dense dark>
+      <v-toolbar-title class="mx-2">Nosotros</v-toolbar-title>
+      <v-toolbar-title class="mx-2">Fechas</v-toolbar-title>
+      <v-toolbar-title class="mx-2"></v-toolbar-title>
+      <v-spacer />
+
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
+          :src="require('@/assets/logo.png')"
+          max-height="40px"
+          class="my-1"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
         />
       </div>
+      <v-spacer />
 
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
+
+    <v-footer app padless>
+      <v-row dense>
+        <v-col cols="12" class="text-center">
+          <small v-text="version" class="pr-1" />
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
+import SideBar from "./components/SideBar.vue";
 
 export default {
-  name: 'App',
+  components: {
+    SideBar,
+  },
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      drawer: false,
+      title: "Licenciado Punk",
+      version: "Versión 1.23.00.00",
+    };
+  },
+
+  methods: {},
 };
 </script>
