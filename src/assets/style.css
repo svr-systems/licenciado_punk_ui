@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Raleway&display=swap');
+
+.v-application {
+  font-family: 'Libre Baskerville', serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Raleway', sans-serif !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .toolbar {
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
@@ -9,21 +43,59 @@
 
 .swal2-html-container,
 .swal2-styled {
-  font-family: "Roboto" !important;
+  font-family: "Libre Baskerville" !important;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
+.c-title {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 22px;
+  font-weight: 500;
 }
 
-::-webkit-scrollbar-track {
-  background: #000; 
-}
- 
-::-webkit-scrollbar-thumb {
-  background: #333; 
+.c-subtitle {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 16px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #333; 
+.full-height {
+  height: 100vh;
+}
+
+.mid-height {
+  height: 50vh;
+}
+
+.full-bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.member {
+  display: flex;
+}
+
+.member-img {
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.member-text {
+  display: inline-block;
+  width: 100%;
+  align-self: flex-end;
+  background-color: #000;
+}
+
+.member-title {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 19px;
+}
+
+.member-subtitle {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 15px;
 }
