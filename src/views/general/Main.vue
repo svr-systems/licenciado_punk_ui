@@ -90,7 +90,7 @@
                   class="text-right"
                 >
                   <span class="mx-5 c-title pointer" v-text="'Nosotros'" />
-                  <span class="mx-5 c-title pointer" v-text="'Shows'" />
+                  <span class="mx-5 c-title pointer" v-text="'Eventos'" />
                 </v-col>
                 <v-col cols="12" sm="12" md="2" class="text-center">
                   <img
@@ -105,17 +105,17 @@
                   />
                 </v-col>
                 <v-col v-if="!screenMobile" cols="12" sm="12" md="5">
-                  <span class="mx-5 c-title pointer" v-text="'StagePlot'" />
-                  <span class="mx-5 c-title pointer" v-text="'Contacto'" />
+                  <span class="mx-5 c-title pointer" v-text="'Música'" />
+                  <span class="mx-5 c-title pointer" v-text="'Tienda'" />
                 </v-col>
                 <v-col v-if="screenMobile" cols="12" class="text-center pt-0">
                   <span class="mx-5 c-title pointer" v-text="'Nosotros'" />
                   <br />
-                  <span class="mx-5 c-title pointer" v-text="'Shows'" />
+                  <span class="mx-5 c-title pointer" v-text="'Eventos'" />
                   <br />
-                  <span class="mx-5 c-title pointer" v-text="'StagePlot'" />
+                  <span class="mx-5 c-title pointer" v-text="'Música'" />
                   <br />
-                  <span class="mx-5 c-title pointer" v-text="'Contacto'" />
+                  <span class="mx-5 c-title pointer" v-text="'Tienda'" />
                 </v-col>
                 <v-col cols="12" class="text-center">
                   <v-tooltip
@@ -203,7 +203,7 @@
 
           <v-row justify="center" class="py-5 my-5">
             <v-col cols="12" class="text-center">
-              <h1>Shows</h1>
+              <h1>Eventos</h1>
             </v-col>
             <v-col
               v-for="(show, i) in shows"
@@ -218,19 +218,49 @@
                 <br />
                 <small> {{ show.date }} | {{ show.hour }} hrs. </small>
               </p>
-              <v-img max-height="400" :src="require(`@/assets/${show.url}`)" />
+              <div
+                :style="`background-image: url('${require(`@/assets/${show.url}`)}');`"
+                class="pointer show-img"
+              />
             </v-col>
           </v-row>
 
-          <v-row
-            class="text-center white--text py-5 mt-5"
-            style="background-color: #111"
-          >
-            <v-col cols="12" sm="12" md="6">
-              <h1>StagePlot</h1>
-            </v-col>
-            <v-col cols="12" sm="12" md="6">
-              <h1>Contacto</h1>
+          <v-row>
+            <v-col
+              cols="12"
+              class="white--text py-5 mt-5"
+              style="background-color: #000"
+            >
+              <h1 class="text-center">Música</h1>
+              <div>
+                <v-tabs
+                  v-model="tabs"
+                  :show-arrows="false"
+                  color="#E30E4F"
+                  background-color="transparent"
+                  dark
+                >
+                  <v-tab to="#1"><b>Pinwino</b></v-tab>
+                  <v-tab to="#2"><b>Mezcal</b></v-tab>
+                </v-tabs>
+                <v-tabs-items v-model="tabs" id="custom-tab-items">
+                  <v-tab-item value="1">
+                    <p>
+                      Sed aliquam ultrices mauris. Donec posuere vulputate arcu.
+                      Morbi ac felis. Etiam feugiat lorem non metus. Sed a
+                      libero.
+                    </p>
+                  </v-tab-item>
+                  <v-tab-item value="2">
+                    <p>
+                      Nam ipsum risus, rutrum vitae, vestibulum eu, molestie
+                      vel, lacus. Aenean tellus metus, bibendum sed, posuere ac,
+                      mattis non, nunc. Aliquam lobortis. Aliquam lobortis.
+                      Suspendisse non nisl sit amet velit hendrerit rutrum.
+                    </p>
+                  </v-tab-item>
+                </v-tabs-items>
+              </div>
             </v-col>
           </v-row>
         </v-container>
@@ -378,6 +408,7 @@ export default {
           tickets: null,
         },
       ],
+      tabs: "1",
     };
   },
 
